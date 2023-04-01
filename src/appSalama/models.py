@@ -185,8 +185,37 @@ class Message(models.Model):
 
 
 class Realisation:
-    pass
+    
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    nom = models.CharField(max_length=255, verbose_name='Nom')
+    email = models.EmailField(max_length=255, verbose_name='Email')
+    sujet = models.CharField(max_length=255, verbose_name='Sujet')
+    message = models.TextField(verbose_name='Message')
+
+    class Meta:
+        verbose_name = 'Realisation'
+
+    def __str__(self):
+        return self.nom
+    
 
 
 class Infrastructure:
-    pass
+    CYCLE_INFERIEUR = CI
+    CYCLE_SUPERIEUR = CS
+    ELECTRONIQUE = ELN
+    ELECTRICITE = EL
+    MECANIQUE = MG
+    
+    INFRASTRUCTURE = []
+    
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    
+
+    class Meta:
+        verbose_name = 'Infrastructure'
+
+    def __str__(self):
+        return self.
+    
+    
