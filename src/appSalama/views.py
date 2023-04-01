@@ -1,12 +1,20 @@
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
-from .models import Option, Article, Commentaire, Inscription, Message, Realisation, Infrastructure
+from .models import *
 from .forms import CommentaireForm, InscriptionForm, MessageForm, LoginForm
 
 
 def index(request):
-    return render(request, "appSalama/index.html")
+    formations = Formation.objects.all()
+    options = Option.objects.all()
+    derniers = Article.objects.all().order_by('-id')[:4]
+    context = {
+        "formations": formations,
+        "options": options,
+        "derniers": derniers,
+    }
+    return render(request, "appSalama/index.html", context)
 
 def option(request, id: int):
     option = Option.objects.get(pk=id)
