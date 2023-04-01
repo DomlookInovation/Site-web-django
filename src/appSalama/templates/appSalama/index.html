@@ -100,66 +100,19 @@
             <div class="row g-3">
                 <div class="col-lg-12 col-md-6">
                     <div class="row g-3">
+                        {% for o in options %}
                         <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.3s" style="height: 310px; ">
                             <a class="position-relative d-block overflow-hidden" href="option.html">
-                                <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
+                                <img class="img-fluid" src={{o.image.url}} alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Eléctricité</h5>
-                                    <small class="color-text">15 Cours</small>
+                                    <h5 class="m-0">{{o.nom}}</h5>
+                                    <small class="color-text">{{o.cours.nom}}</small>
                                 </div>
                             </a>
                         </div>
-                        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.5s" style="height: 310px; ">
-                            <a class="position-relative d-block overflow-hidden" href="option.html">
-                                <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Imprimerie</h5>
-                                    <small class="color-text">49 Cours</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.3s" style="height: 310px; ">
-                            <a class="position-relative d-block overflow-hidden" href="option.html">
-                                <img class="img-fluid" src={% static "appSalama/img/MECANIQUE GENERALE.jpg" %} alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Mecanique Generale</h5>
-                                    <small class="color-text">49 Cours</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.5s" style="height: 310px; ">
-                            <a class="position-relative d-block overflow-hidden" href="option.html">
-                                <img class="img-fluid" src={% static "appSalama/img/MECANIQUE AUTO.jpg" %} alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Mecanique-Auto</h5>
-                                    <small class="color-text">49 Cours</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.7s" style="height: 310px; ">
-                    
-                            <a class="position-relative d-block h-100 overflow-hidden" href="option.html">
-                                <img class="img-fluid position-absolute w-100 h-100" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="" >
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                                    <h5 class="m-0">Electronique</h5>
-                                    <small class="color-text">23 Cours</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.7s" style="height: 310px;">
-                    
-                            <a class="position-relative d-block h-100 overflow-hidden" href="option.html">
-                                <img class="img-fluid position-absolute w-100 h-100" src={% static "appSalama/img/ELECTRONIQUE.jpg" %} alt="" style="object-fit: cover;">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                                    <h5 class="m-0">Electronique</h5>
-                                    <small class="color-text">23 Cours</small>
-                                </div>
-                            </a>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                
-                
             </div>
         </div>
     </div>
@@ -174,42 +127,17 @@
                 <h1 class="mb-5">7<sup>ième</sup>année professionnelle</h1>
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
-               
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid" src={% static "appSalama/img/MECANIQUE GENERALE.jpg" %} alt="">
-                    <h5 class="mb-0 mt-2">Mecanique generale</h5>
-                    <p>Professionnelle</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                {% for f in formations %}
+                    <div class="testimonial-item text-center">
+                        <img class="img-fluid" src={{f.image.url}} alt="{{f.nom}}">
+                        <h5 class="mb-0 mt-2">{{f.nom}}</h5>
+                        <p>Professionnelle</p>
+                        <div class="testimonial-text bg-light text-center p-4">
+                        <p class="mb-0">{{f.description1}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid" src={% static "appSalama/img/MECANIQUE AUTO.jpg" %} alt="">
-                    <h5 class="mb-0 mt-2">Mecanique auto</h5>
-                    <p>Professionnelle</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid" src={% static "appSalama/img/ELECTRONIQUE.jpg" %} alt="">
-                    <h5 class="mb-0 mt-2">Electronique</h5>
-                    <p>Professionnelle</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
-                    <h5 class="mb-0 mt-2">Electricite</h5>
-                    <p>Professionnelle</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                {% endfor %}
+             </div>
     <!-- Formation End -->
 
 
@@ -221,102 +149,28 @@
                 <h1 class="mb-5">Nos dernières publications</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Voir Plus</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/ELECTRONIQUE.jpg" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Voir Plus</a>
+                {% for a in derniers %}
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item bg-light">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid" src={{a.image.url}} alt="">
+                            </div>
+                            <div class="text-center py-2">
+                                <h5 class="mb-0">{{a.titre}}</h5>
+                                <small>{{a.contenu|safe|truncatewords:15}}</small><br>
+                                <a class="btn btn-prim py-2 px-3 mt-2" href="">Voir Plus</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Lire Plus</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/ELECTRONIQUE.jpg" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Lire Plus</a>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-            <div class="row g-0">
-                <div class="collapse col-lg-3 col-md-6" data-wow-delay="0.1s" id="collapseExample">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/imprimerie.JPG" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Lire Plus</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="collapse col-lg-3 col-md-6" data-wow-delay="0.3s" id="collapseExample">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Lire Plus</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="collapse col-lg-3 col-md-6" data-wow-delay="0.5s" id="collapseExample">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src={% static "appSalama/img/ELECTRICITE.jpg" %} alt="">
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Installation electrique</h5>
-                            <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, qui facere.</small><br>
-                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Voir Plus</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-
+    
     <!-- Partenaire Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5 mb-5">
-            <div class="bg-dark">
+            <div class="bg-white">
                 <div class="owl-carousel vendor-carousel">
                     <img src={% static "appSalama/img/logo/congo equipment.png" %} alt="">
                     <img src={% static "appSalama/img/logo/congo equipment.png" %} alt="">
@@ -330,7 +184,7 @@
         </div>
     </div>
     <!-- Partenaire End -->
-    {% endblock body%}
+    {% endblock body %}
       
 </body>
 </html>
