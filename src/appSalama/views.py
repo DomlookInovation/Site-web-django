@@ -16,8 +16,8 @@ def index(request):
     }
     return render(request, "appSalama/index.html", context)
 
-def option(request, id: int):
-    option = Option.objects.get(pk=id)
+def option(request, slug: slug):
+    option = Option.objects.get(slug=slug)
     return render(request, "appSalama/option.html", context={'option':option})
 
 def about(request):
