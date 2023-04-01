@@ -64,7 +64,7 @@ class Article(models.Model):
         (SECURITE, 'Securite'),
     ]
 
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
     titre = models.CharField(max_length=255, unique=True, verbose_name="Titre")
     contenu = models.TextField(blank=True, verbose_name="Contenu")
     slug = models.SlugField(max_length=255, blank=True, unique=True)
@@ -89,20 +89,24 @@ class Article(models.Model):
 
 
 class Cours(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
-    nom = models.CharField(max_length=255, verbose_name="Nom")
+    #user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    nom = models.CharField(max_length=255, verbose_name="Nom", unique=True)
     description = models.TextField(verbose_name="Description")
 
     class Meta:
-        verbose_name = 'Cours'
+        verbose_name = 'Cour'
 
     def __str__(self):
         return self.nom
-
+    
+    @property
+    def getNombreCours(self):
+        return len(self.nom)
 
 class Option(models.Model):
 
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    cours = models.ForeignKey(Cours, on_delete=models.CASCADE, null=True)
     nom = models.CharField(max_length=255, unique=True, verbose_name="Nom")
     description1 = models.TextField(verbose_name="Description1")
     description2 = models.TextField(verbose_name="Description2")
@@ -118,7 +122,7 @@ class Option(models.Model):
 
 class Formation(models.Model):
 
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
     nom = models.CharField(max_length=255, verbose_name="Nom")
     description1 = models.TextField(verbose_name="Description")
     image = models.ImageField(upload_to='Formation')
@@ -132,8 +136,8 @@ class Formation(models.Model):
 class Commentaire(models.Model):
     
     nom = models.CharField(max_length=255, verbose_name="Nom")
-    article = models.ForeignKey(Article, on_delete=models.CASCADE )
-    image_profil = models.ImageField(upload_to='Commenatire', blank=True, null=True)
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    image_profil = models.ImageField(upload_to='Commentaire', blank=True, null=True)
     email = models.EmailField(max_length=255, blank=True)
     website = models.CharField(max_length=255, blank=True)
     commentaire = models.TextField()
@@ -146,7 +150,7 @@ class Commentaire(models.Model):
 
 
 class Inscription(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
     nom = models.CharField(max_length=255, verbose_name='Nom')
     post_nom = models.CharField(max_length=255, verbose_name='Post nom')
     prenom = models.CharField(max_length=255, verbose_name='Prenom')
@@ -167,7 +171,7 @@ class Inscription(models.Model):
 
 class Message(models.Model):
 
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
     nom = models.CharField(max_length=255, verbose_name='Nom')
     email = models.EmailField(max_length=255, verbose_name='Email')
     sujet = models.CharField(max_length=255, verbose_name='Sujet')
@@ -178,3 +182,11 @@ class Message(models.Model):
 
     def __str__(self):
         return self.nom
+
+
+class Realisation:
+    pass
+
+
+class Infrastructure:
+    pass
