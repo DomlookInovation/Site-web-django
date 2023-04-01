@@ -24,8 +24,8 @@ def about(request):
     options = [option.nom for option in Option.objects.all()]
     return render(request, "appSalama/about.html", context={'options':options})
 
-def article(request, id:int):
-    article = Article.objects.get(pk=id)
+def article(request, slug:str):
+    article = Article.objects.get(slug=slug)
     commentaires = Commentaire.objects.filter(article_id=id)
     if request.method == 'POST':
         form = CommentaireForm(request.POST)
@@ -40,12 +40,12 @@ def article(request, id:int):
             commentaire.save()
             return redirect("article")
     form = CommentaireForm()
-    derniers = list(articles).reverse()[:3]
+    derniers = list(articles).reverse()[:4]
     return render(request, "appSalama/article.html", context={'article':article,'commentaires':commentaires,'derniers':derniers,'form':form})
 
 def articles(request):
     articles = Article.objects.all()
-    derniers = list(articles).reverse()[:3]
+    derniers = list(articles).reverse()[:4]
     return render(request, "appSalama/articles.html", context={'articles': articles,'derniers':derniers})
 
 def articles_categorie(request,categorie:str):
@@ -74,8 +74,8 @@ def inscription(request):
     form = InscriptionForm()
     return render(request, "appSalama/inscription.html", context={'form':form})
 
-def article(request, id:int):
-    article = Article.objects.get(pk=id)
+def article(request, slug:slug):
+    article = Article.objects.get(slug=slug)
     commentaires = Commentaire.objects.filter(article_id=id)
     if request.method == 'POST':
         form = CommentaireForm(request.POST)
@@ -96,8 +96,8 @@ def realisations(request):
     realisations = Realisation.objects.all()
     return render(request, "appSalama/realisations.html", context={'realisations':realisations})
 
-def realisation (request, id: int):
-    realisation = Realisation.objects.get(pk=id)
+def realisation (request, slug: str):
+    realisation = Realisation.objects.get(slug=slug)
     return render(request, "appSalama/realisation.html", context={'realisation':realisation})
 
 def contact(request):
