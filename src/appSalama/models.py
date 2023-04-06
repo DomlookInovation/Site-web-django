@@ -87,30 +87,14 @@ class Article(models.Model):
             self.slug = slugify(self.titre)
         super().save(*args, **kwargs)
 
-
-class Cours(models.Model):
-    #user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
-    nom = models.CharField(max_length=255, verbose_name="Nom", unique=True)
-    description = models.TextField(verbose_name="Description")
-
-    class Meta:
-        verbose_name = 'Cour'
-
-    def __str__(self):
-        return self.nom
-    
-    @property
-    def getNombreCours(self):
-        return len(self.nom)
-
 class Option(models.Model):
 
     user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
-    cours = models.ForeignKey(Cours, on_delete=models.CASCADE, null=True)
     nom = models.CharField(max_length=255, unique=True, verbose_name="Nom")
     description1 = models.TextField(verbose_name="Description1")
     description2 = models.TextField(verbose_name="Description2")
     description3 = models.TextField(verbose_name="Description3")
+    slug = models.SlugField(blank=True, unique=True, max_length=255)
     image = models.ImageField(upload_to='Option')
 
     class Meta:
@@ -119,6 +103,25 @@ class Option(models.Model):
     def __str__(self):
         return self.nom
     
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.nom)
+        super().save(*args, **kwargs)
+
+
+
+class Cours(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
+    option = models.ForeignKey(Option, on_delete=models.CASCADE)
+    nom = models.CharField(max_length=255, verbose_name="Nom", unique=True)
+    description = models.TextField(verbose_name="Description")
+
+    class Meta:
+        verbose_name = 'Cour'
+
+    def __str__(self):
+        return self.nom
+
 
 class Formation(models.Model):
 
@@ -184,38 +187,75 @@ class Message(models.Model):
         return self.nom
 
 
-class Realisation:
-    
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
-    nom = models.CharField(max_length=255, verbose_name='Nom')
-    email = models.EmailField(max_length=255, verbose_name='Email')
-    sujet = models.CharField(max_length=255, verbose_name='Sujet')
-    message = models.TextField(verbose_name='Message')
+class Realisation(models.Model):
+
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, verbose_name="Utilisateur")
+    option = models.ForeignKey(Option, on_delete=models.SET_NULL, null=True, verbose_name="Option")
+    titre = models.CharField(max_length=255, verbose_name="Titre", unique=True)
+    presentation = models.TextField(verbose_name="Presentation")
+    detail = models.TextField(verbose_name="Detail")
+    innovateur = models.TextField(verbose_name="Innovateur")
+    date = models.DateField(blank=True, null=True, verbose_name="Date")
+    slug = models.SlugField(max_length=255, blank=True, unique=True, verbose_name="Slug")
 
     class Meta:
         verbose_name = 'Realisation'
 
     def __str__(self):
-        return self.nom
-    
+        return self.titre
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.titre)
+        super().save(*args, **kwargs)
 
-class Infrastructure:
-    CYCLE_INFERIEUR = CI
-    CYCLE_SUPERIEUR = CS
-    ELECTRONIQUE = ELN
-    ELECTRICITE = EL
-    MECANIQUE = MG
-    
-    INFRASTRUCTURE = []
-    
-    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
-    
+class Infrastructure(models.Model):
+
+    INFRASTRUCTURE = [
+        ("CYCLE SUPERIEUR", "CYCLE SUPERIEUR"),
+        ("CYCLE INFERIEUR", "CYCLE INFERIEUR"),
+        ("MECANIQUE GENERALE", "MECANIQUE GENERALE"),
+        ("MECANIQUE AUTO", "MECANIQUE AUTO"),
+        ("ELECTRONIQUE", "ELECTRONIQUE"),
+        ("ELECTRICITE", "ELECTRICITE"),
+        ("IMPRIMERIE", "IMPRIMERIE"),
+    ]
+
+    titre = models.CharField(max_length=255, verbose_name="Titre")
+    image = models.ImageField(upload_to="Infrastructure", verbose_name="Image")
+    categorie = models.CharField(max_length=255, choices=INFRASTRUCTURE, verbose_name="Categorie")
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Utilisateur")
 
     class Meta:
-        verbose_name = 'Infrastructure'
+        verbose_name = "Infrastructure"
 
     def __str__(self):
-        return self.
-    
-    
+        return self.titre
+
+
+class Archive(models.Model):
+
+    MOIS = [
+        ("JANVIER", "JANVIER"),
+        ("FEVRIER", "FEVRIER"),
+        ("MARS", "MARS"),
+        ("AVRIL", "AVRIL"),
+        ("MAI", "MAI"),
+        ("JUIN", "JUIN"),
+        ("JUILLET", "JUILLET"),
+        ("AOUT", "AOUT"),
+        ("SEPTEMBRE", "SEPTEMBRE"),
+        ("OCTOMBRE", "OCTOMBRE"),
+        ("NOVEMBRE", "NOVEMBRE"),
+        ("DECEMBRE", "DECEMBRE"),
+    ]
+
+    mois = models.CharField(max_length=255, choices=MOIS, verbose_name="Mois")
+    annee = models.DateField(verbose_name="Date")
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Utilisateur")
+
+    class Meta:
+        verbose_name = "Archive"
+
+    def __str__(self):
+        return f"{self.mois} {self.annee}"

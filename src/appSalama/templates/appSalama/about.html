@@ -1,84 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <title>ITS</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="img/logo.jpg" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Apropos{% endblock title%}
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border color-text" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><img src="img/logo.jpg" width="40px" height="40px"/></h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" id="boutton-haut" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <i class="uil uil-list-ul fs-1"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link d-flex"><i class="fa-solid fa-house"></i><span>Accueil</span></a>
-                <a href="about.html" class="nav-item nav-link d-flex active align-items-center"><i class="fa-solid fa-circle-exclamation"></i><span>A propos</span></a>
-                <a href="infrastructres.html" class="nav-item nav-link"><i class="fa-sharp fa-solid fa-users"></i><span>Nos Infrastructures</span></a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-blog"></i><span>BLOG</span></a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="realisations.html" class="dropdown-item"><i class="fa-solid fa-house-person-leave"></i>Réalisations </a>
-                        <a href="#" class="dropdown-item">Témoignages</a>
-                        <a href="articles.html" class="dropdown-item">Articles</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link"><i class="fa-solid fa-address-book"></i><span>Contact</span></a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-globe"></i><span>Langues</span></a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item"><i class="fa-solid fa-house-person-leave"></i>Français </a>
-                        <a href="#" class="dropdown-item">Anglais</a>
-                    </div>
-                </div>
-            </div>
-            <a href="connexion.html" class="btn btn-prim py-4 px-lg-5 d-none d-lg-block">CONNEXION<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>  
-    <!-- Navbar End -->
-
-
+    {% block body %}
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
@@ -87,8 +12,7 @@
                     <h1 class="display-3 text-white animated slideInDown">A propos</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Accueil</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href={% url 'appSalama:home'%}>Accueil</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">A propos</li>
                         </ol>
                     </nav>
@@ -104,70 +28,37 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/about_img.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src={% static 'appSalama/img/about_img.jpg' %} alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s" id="text-1">
                     <h1 class="mb-4">Qui sommes-nous ?</h1>
-                    <p class="mb-4 text-justify">L’institut Technique Salama Don Bosco a ouvert ses portes le 11 octobre 1955 sous la dénomination d’école Professionnelle Officielle des Métiers Don Bosco (EPom) en sigle. 92 jeunes étaient accueillis dans les trois sections que comportaient l’école, à savoir la mécanique automobile, la menuiserie et la maçonnerie. C’est pour nous une opportunité de rendre un hommage mérité aux pionniers de cette école. D’abord les 4 premiers salésiens qui sont le P Frans Lehaen, devenu évêque de Sakania Kipushi, qui fut le premier directeur de l’œuvre, le P Albert Snoeckx, premier préfet de l’école, Mr Clément Hlond, coadjuteur mécanicien et le stagiaire, abbé Gerrit van aspert, qualifié en maçonnerie, les 12 moniteurs laïc. L’école a abandonné progressivement les sections artisanales 2 ans pour introduire les sections techniques secondaires inférieures (4 ans).</p>
+                    <p class="mb-4" style="text-align: justify">L’institut Technique Salama Don Bosco a ouvert ses portes le 11 octobre 1955 sous la dénomination d’école Professionnelle Officielle des Métiers Don Bosco (EPom) en sigle. 92 jeunes étaient accueillis dans les trois sections que comportaient l’école, à savoir la mécanique automobile, la menuiserie et la maçonnerie. C’est pour nous une opportunité de rendre un hommage mérité aux pionniers de cette école. D’abord les 4 premiers salésiens qui sont le P Frans Lehaen, devenu évêque de Sakania Kipushi, qui fut le premier directeur de l’œuvre, le P Albert Snoeckx, premier préfet de l’école, Mr Clément Hlond, coadjuteur mécanicien et le stagiaire, abbé Gerrit van aspert, qualifié en maçonnerie, les 12 moniteurs laïc. L’école a abandonné progressivement les sections artisanales 2 ans pour introduire les sections techniques secondaires inférieures (4 ans).</p>
                 </div>
                 <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s" id="text-2">
                     <h1 class="mb-4">Notre histoire</h1>
-                    <p class="mb-4">Lors de sa célébration du 10 ème anniversaire 1964-65 l’école introduit le cycle d’orientation qui devait permettre la création de cycles longs de 6 ans dès 1966 avec la section d’électricité. L’école changeait de nom pour devenir Ecole technique secondaire supérieure (ETSS) Don Bosco, dénomination qu’elle gardera jusqu’à la zairianisation. En 1972 eut lieu la fusion des deux écoles techniques salésiennes, celle de la Kafubu et l’ETSS. On transférait d’abord la section mécanique générale de la Kafubu ensuite l’imprimerie (installé dans l’atelier de menuiserie) en ville. Lors de la zairianisation l’école pris le nom de « Institut Technique Professionnel Salama », dans l’idée des gestionnaires de l’époque, l’école devait rester un lieu de paix, une école où on se sent chez soi. En 2001-2002 l’Institut technique salama initia la section mécanique automobile cycle long, puis en 2003-2004, la section électronique. L’année 2002-2003, a vu naître en prolongement de l’enseignement technique dispensé à Salama l’Ecole Supérieure d’Informatique ESIS en sigle qui forme des cadres spécialisés dans les différents domaines de l’informatique dont on sentait partout le besoin. De nos jours l’institut technique Salama organise 6 sections : l’électricité, l’électronique, l’imprimerie, la mécanique générale, la mécanique machines-outils, la mécanique Automobile cycle long et cycle professionnel. Afin de compléter la formation professionnelle donnée à nos élèves, l’école a initié depuis 2012 la 7ème année de professionnalisation dans toutes les sections. Tout au long de son parcours, l’œuvre salésienne de Salama a connu 22 Directeurs et 15 préfets.</p>
-                    <p class="mb-4 text-justify">Il a délivré 5730 diplômes jusqu’en 2015, c’est ici une occasion pour rendre un hommage mérité aux salésiens, à tous les collaborateurs laïcs formateurs, aux autorités scolaires, aux différents bienfaiteurs et à tous les partenaires qui ont collaboré d’une façon ou d’une autre jusqu’à ce jour dans la formation des jeunes de cette école. Nous n’oublions pas les parents qui font confiance à cette école et y envoient leurs enfants et qui depuis un peu plus de deux décennies portent la charge du fonctionnement et de la motivation du personnel. A ce jour, l’école nourrit des grands projets : le sexagénaire sera marqué par l’érection d’une grotte mariale dans l’espace scolaire, ceci pour remercier la Vierge Marie, celle qui a tout fait. L’école s’engage dans la voie de la sécurisation de l’infrastructure en érigeant une clôture en grillage, la construction de l’internat, l’acquisition des nouveaux bus scolaires pour le transport de ses élèves en plus du seul dont il dispose. la modernisation des ateliers et l’entretien des infrastructures. Elle lance un appel à tous ceux qui sont passés par cette école, à tous ceux qui aiment et croient dans la formation que donne cette école, laquelle en réalité a peu de concurrents sur la plan national de soutenir la réalisation de ces projets.</p>
+                    <p class="mb-4" >Lors de sa célébration du 10 ème anniversaire 1964-65 l’école introduit le cycle d’orientation qui devait permettre la création de cycles longs de 6 ans dès 1966 avec la section d’électricité. L’école changeait de nom pour devenir Ecole technique secondaire supérieure (ETSS) Don Bosco, dénomination qu’elle gardera jusqu’à la zairianisation. En 1972 eut lieu la fusion des deux écoles techniques salésiennes, celle de la Kafubu et l’ETSS. On transférait d’abord la section mécanique générale de la Kafubu ensuite l’imprimerie (installé dans l’atelier de menuiserie) en ville. Lors de la zairianisation l’école pris le nom de « Institut Technique Professionnel Salama », dans l’idée des gestionnaires de l’époque, l’école devait rester un lieu de paix, une école où on se sent chez soi. En 2001-2002 l’Institut technique salama initia la section mécanique automobile cycle long, puis en 2003-2004, la section électronique. L’année 2002-2003, a vu naître en prolongement de l’enseignement technique dispensé à Salama l’Ecole Supérieure d’Informatique ESIS en sigle qui forme des cadres spécialisés dans les différents domaines de l’informatique dont on sentait partout le besoin. De nos jours l’institut technique Salama organise 6 sections : l’électricité, l’électronique, l’imprimerie, la mécanique générale, la mécanique machines-outils, la mécanique Automobile cycle long et cycle professionnel. Afin de compléter la formation professionnelle donnée à nos élèves, l’école a initié depuis 2012 la 7ème année de professionnalisation dans toutes les sections. Tout au long de son parcours, l’œuvre salésienne de Salama a connu 22 Directeurs et 15 préfets.</p>
+                    <p class="mb-4" style="text-align: justify">Il a délivré 5730 diplômes jusqu’en 2015, c’est ici une occasion pour rendre un hommage mérité aux salésiens, à tous les collaborateurs laïcs formateurs, aux autorités scolaires, aux différents bienfaiteurs et à tous les partenaires qui ont collaboré d’une façon ou d’une autre jusqu’à ce jour dans la formation des jeunes de cette école. Nous n’oublions pas les parents qui font confiance à cette école et y envoient leurs enfants et qui depuis un peu plus de deux décennies portent la charge du fonctionnement et de la motivation du personnel. A ce jour, l’école nourrit des grands projets : le sexagénaire sera marqué par l’érection d’une grotte mariale dans l’espace scolaire, ceci pour remercier la Vierge Marie, celle qui a tout fait. L’école s’engage dans la voie de la sécurisation de l’infrastructure en érigeant une clôture en grillage, la construction de l’internat, l’acquisition des nouveaux bus scolaires pour le transport de ses élèves en plus du seul dont il dispose. la modernisation des ateliers et l’entretien des infrastructures. Elle lance un appel à tous ceux qui sont passés par cette école, à tous ceux qui aiment et croient dans la formation que donne cette école, laquelle en réalité a peu de concurrents sur la plan national de soutenir la réalisation de ces projets.</p>
                 </div>
                 <div class="col-lg-5 wow fadeInUp" >
-                    <div id="option-apropos" data-wow-delay="0.3s" >
+                    <div data-wow-delay="0.3s" >
                         <h1 class="mb-4 text-start">Notre vision</h1>
-                        <p class="mb-4 text-start">Lors de sa célébration du 10 ème anniversaire 1964-65 l’école introduit le cycle d’orientation qui devait permettre la création de cycles longs de 6 ans dès 1966 avec la section d’électricité. L’école changeait de nom pour devenir Ecole technique secondaire supérieure (ETSS) Don Bosco, dénomination qu’elle gardera jusqu’à la zairianisation. En 1972 eut lieu la fusion des deux écoles techniques salésiennes, celle de la Kafubu et l’ETSS. On transférait d’abord la section mécanique générale de la Kafubu ensuite l’imprimerie (installé dans l’atelier de menuiserie) en ville. Lors de la zairianisation l’école pris le nom de « Institut Technique Professionnel Salama », dans l’idée des gestionnaires de l’époque, l’école devait rester un lieu de paix, une école où on se sent chez soi. En 2001-2002.</p>  
+                        <p style="text-align: justify" class="mb-4 text-start">Lors de sa célébration du 10 ème anniversaire 1964-65 l’école introduit le cycle d’orientation qui devait permettre la création de cycles longs de 6 ans dès 1966 avec la section d’électricité. L’école changeait de nom pour devenir Ecole technique secondaire supérieure (ETSS) Don Bosco, dénomination qu’elle gardera jusqu’à la zairianisation. En 1972 eut lieu la fusion des deux écoles techniques salésiennes, celle de la Kafubu et l’ETSS. On transférait d’abord la section mécanique générale de la Kafubu ensuite l’imprimerie (installé dans l’atelier de menuiserie) en ville. Lors de la zairianisation l’école pris le nom de « Institut Technique Professionnel Salama », dans l’idée des gestionnaires de l’époque, l’école devait rester un lieu de paix, une école où on se sent chez soi. En 2001-2002.</p>  
                     </div> 
-                    <div class="text-start" id="option-apropos" data-wow-delay="0.6s" >
+                    <div class="text-start" data-wow-delay="0.6s" >
                         <h1 class="mb-4">Nos options</h1>
                         <div class="row gy-2 gx-4 mb-4">
+                            {% for o in options %}
                             <div class="col-sm-12">
                                 <p class="mb-0">
-                                    <a href="option.html" style="color: black;">
-                                        <i class="fa fa-arrow-right color-text me-2"></i>Mecanique generale
+                                    <a href={% url 'appSalama:option' slug=o.slug %} style="color: black;">
+                                        <i class="fa fa-arrow-right color-text me-2"></i>
+                                        {{o.nom}}
                                     </a>
                                 </p>
                             </div>
-                            <div class="col-sm-12">
-                                <p class="mb-0">
-                                    <a href="option.html"  style="color: black;"></a>
-                                        <i class="fa fa-arrow-right color-text me-2"></i>Electricite generale
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="col-sm-12">
-                                <p class="mb-0">
-                                    <a href="option.html" style="color: black;"></a>
-                                        <i class="fa fa-arrow-right color-text me-2"></i>Electronique industrielle
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="col-sm-12">
-                                <p class="mb-0">
-                                    <a href="option.html" style="color: black;"></a>
-                                        <i class="fa fa-arrow-right color-text me-2"></i>Mecanique auto
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="col-sm-12">
-                                <p class="mb-0">
-                                    <a href="option.html" style="color: black;"></a>
-                                        <i class="fa fa-arrow-right color-text me-2"></i>Imprimerie
-                                    </a>
-                                </p>
-                            </div>
-                            <div class="col-sm-12">
-                                <p class="mb-0">
-                                    <a href="option.html" style="color: black;"></a>
-                                        <i class="fa fa-arrow-right color-text me-2"></i>Machine outils
-                                    </a>
-                                </p>
-                            </div>  
+                            {% endfor %}
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -175,62 +66,4 @@
         </div>
     </div>
     <!-- About End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light text-center footer pt-3 mt-3 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-3">
-            <div class="row g-3">
-                <div class="col-lg-4 col-md-4">
-                    <h4 class="text-white mb-3">COORDONNEES</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>05 Av. Femme Katangaise, Lubumbashi, RDC</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+243 995 285 024</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h4 class="text-white mb-3">QUELQUES LIENS UTILES</h4>
-                    <a class="btn btn-link text-center" href="about.html">Qui sommes-nous ?</a>
-                    <a class="btn btn-link text-center" href="articles.html">Nos derniers articles</a>
-                    <a class="btn btn-link text-center" href="inscription.html">Rejoignez-nous maintenant</a>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <h4 class="text-white mb-3">AUTRES LIENS</h4>
-                    <div class="d-flex justify-content-center pt-3">
-                        <a class="btn btn-outline-light btn-social text-center" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social text-center" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social text-center" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social text-center" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-12 text-center text-md-center mb-3 mb-md-0">
-                        Copyright 
-                        &copy; <a class="border-bottom" href="#">ITSALAMA 2023</a>, All Right Reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-prim btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+{% endblock body %}

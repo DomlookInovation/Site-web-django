@@ -1,43 +1,40 @@
 {% extends 'base.html'%}
 {% load static %}
-{% block title%}<title>Accueil</title>{% endblock title%}
+{% block title%}Accueil{% endblock title%}
 
-<body>
-    
-    {% block body %}
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
+{% block body %}
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src={% static "appSalama/img/100_7437.jpg" %} alt="">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown" > Une école, un avenir.</h5>
+                            <h1 class="display-3 text-white animated slideInDown">Institut Technique SALAMA</h1>
+                            
+                            <p class="fs-5 text-white mb-4 pb-2 w-75">Je m'eduque pour en eduquer d'autres</p>
+                            <a href={% url 'appSalama:about'%} class="btn btn-prim py-md-3 px-md-5 me-3 animated slideInLeft">Qui sommes-nous ?</a>
+                            <a href={% url 'appSalama:inscription'%} class="btn btn-light py-md-3 px-md-5 animated slideInRight">Rejoignez-nous maintenant</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src={% static "appSalama/img/100_7437.jpg" %} alt="">
+                <img class="img-fluid" src={% static "appSalama/img/MECANIQUE GENERALE.jpg" %} alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown" > Une école, un avenir.</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Institut Technique SALAMA</h1>
-                                
                                 <p class="fs-5 text-white mb-4 pb-2 w-75">Je m'eduque pour en eduquer d'autres</p>
-                                <a href="" class="btn btn-prim py-md-3 px-md-5 me-3 animated slideInLeft">Qui sommes-nous ?</a>
-                                <a href="inscription.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Rejoignez-nous maintenant</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel header-carousel position-relative">
-                <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src={% static "appSalama/img/MECANIQUE GENERALE.jpg" %} alt="">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
-                        <div class="container">
-                            <div class="row justify-content-start">
-                                <div class="col-sm-10 col-lg-8">
-                                    <h5 class="text-primary text-uppercase mb-3 animated slideInDown" > Une école, un avenir.</h5>
-                                    <h1 class="display-3 text-white animated slideInDown">Institut Technique SALAMA</h1>
-                                    <p class="fs-5 text-white mb-4 pb-2 w-75">Je m'eduque pour en eduquer d'autres</p>
-                                    <a href="" class="btn btn-prim py-md-3 px-md-5 me-3 animated slideInLeft">Qui sommes-nous ?</a>
-                                    <a href="inscription.html" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Rejoignez-nous maintenant</a>
-                                </div>
+                                <a href={% url 'appSalama:about'%} class="btn btn-prim py-md-3 px-md-5 me-3 animated slideInLeft">Qui sommes-nous ?</a>
+                                <a href={% url 'appSalama:inscription'%} class="btn btn-light py-md-3 px-md-5 animated slideInRight">Rejoignez-nous maintenant</a>
                             </div>
                         </div>
                     </div>
@@ -45,146 +42,144 @@
             </div>
         </div>
     </div>
-    <!-- Carousel End -->
+</div>
+<!-- Carousel End -->
 
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src={% static "appSalama/img/about_img.jpg" %} alt="" style="object-fit: cover;">
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src={% static "appSalama/img/about_img.jpg" %} alt="" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 text-justify wow fadeInUp" data-wow-delay="0.3s" >
+                <h6 class="section-title bg-white text-start color-text pe-3">A propos de nous</h6>
+                <h1 class="mb-4">Bienvenue à l'Institut Technique SALAMA</h1>
+                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <div class="row gy-2 gx-4 mb-4">
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Skilled Instructors</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Online Classes</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>International Certificate</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Skilled Instructors</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Online Classes</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>International Certificate</p>
                     </div>
                 </div>
-                <div class="col-lg-6 text-justify wow fadeInUp" data-wow-delay="0.3s" >
-                    <h6 class="section-title bg-white text-start color-text pe-3">A propos de nous</h6>
-                    <h1 class="mb-4">Bienvenue à l'Institut Technique SALAMA</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <div class="row gy-2 gx-4 mb-4">
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Skilled Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Online Classes</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>International Certificate</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Skilled Instructors</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>Online Classes</p>
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right color-text me-2"></i>International Certificate</p>
-                        </div>
-                    </div>
-                    <a class="btn btn-prim py-3 px-5 mt-2" href="about.html">Lire Plus</a>
-                </div>
+                <a class="btn btn-prim py-3 px-5 mt-2" href="about.html">Lire Plus</a>
             </div>
         </div>
     </div>
-    <!-- About End -->
+</div>
+<!-- About End -->
 
 
-    <!-- Options Start -->
-    <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center color-text px-3">Nos Options</h6>
-                <h1 class="mb-5">six options organisées</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-12 col-md-6">
-                    <div class="row g-3">
-                        {% for o in options %}
-                        <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.3s" style="height: 310px; ">
-                            <a class="position-relative d-block overflow-hidden" href="option.html">
-                                <img class="img-fluid" src={{o.image.url}} alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">{{o.nom}}</h5>
-                                    <small class="color-text">{{o.cours.nom}}</small>
-                                </div>
-                            </a>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
+<!-- Options Start -->
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center color-text px-3">Nos Options</h6>
+            <h1 class="mb-5">six options organisées</h1>
         </div>
-    </div>
-    <!-- Options Start -->
-
-
-    <!-- Formation Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center color-text px-3">Nos formations</h6>
-                <h1 class="mb-5">7<sup>ième</sup>année professionnelle</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                {% for f in formations %}
-                    <div class="testimonial-item text-center">
-                        <img class="img-fluid" src={{f.image.url}} alt="{{f.nom}}">
-                        <h5 class="mb-0 mt-2">{{f.nom}}</h5>
-                        <p>Professionnelle</p>
-                        <div class="testimonial-text bg-light text-center p-4">
-                        <p class="mb-0">{{f.description1}}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-             </div>
-    <!-- Formation End -->
-
-
-    <!-- Article Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center color-text px-3">Nos articles</h6>
-                <h1 class="mb-5">Nos dernières publications</h1>
-            </div>
-            <div class="row g-4">
-                {% for a in derniers %}
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item bg-light">
-                            <div class="overflow-hidden">
-                                <img class="img-fluid" src={{a.image.url}} alt="">
+        <div class="row g-3">
+            <div class="col-lg-12 col-md-6">
+                <div class="row g-3">
+                    {% for o in options %}
+                    <div class="col-lg-4 col-md-12 wow zoomIn" data-wow-delay="0.3s" style="height: 310px; ">
+                        <a class="position-relative d-block overflow-hidden" href={% url 'appSalama:option' slug=o.slug %}>
+                            <img class="img-fluid" src={{o.image.url}} alt="">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">{{o.nom|upper}}</h5>
+                                <small class="color-text">{{o.cours.nom}}</small>
                             </div>
-                            <div class="text-center py-2">
-                                <h5 class="mb-0">{{a.titre}}</h5>
-                                <small>{{a.contenu|safe|truncatewords:15}}</small><br>
-                                <a class="btn btn-prim py-2 px-3 mt-2" href="">Voir Plus</a>
-                            </div>
-                        </div>
+                        </a>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
-    <!-- Partenaire Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src={% static "appSalama/img/logo/congo equipment.png" %} alt="">
-                    <img src={% static "appSalama/img/logo/congo equipment.png" %} alt="">
-                    <img src={% static "appSalama/img/logo/mulykap.png" %} alt="">
-                    <img src={% static "appSalama/img/logo/unh.jpeg" %} alt="">
-                    <img src={% static "appSalama/img/logo/schneider.jpeg"%} alt="">
-                    <img src={% static "appSalama/img/logo/schneider.jpeg"%} alt="">
-                    <img src={% static "appSalama/img/logo.jpg" %} alt="">
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-    <!-- Partenaire End -->
-    {% endblock body %}
-      
-</body>
-</html>
+</div>
+<!-- Options Start -->
+
+
+<!-- Formation Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center color-text px-3">Nos formations</h6>
+            <h1 class="mb-5">7<sup>ième</sup>année professionnelle</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            {% for f in formations %}
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid" src={{f.image.url}} alt="{{f.nom}}">
+                    <h5 class="mb-0 mt-2">{{f.nom}}</h5>
+                    <p>Professionnelle</p>
+                    <div class="testimonial-text bg-light text-center p-4">
+                    <p class="mb-0">{{f.description1}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+<!-- Formation End -->
+
+
+<!-- Article Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center color-text px-3">Nos articles</h6>
+            <h1 class="mb-5">Nos dernières publications</h1>
+        </div>
+        <div class="row g-4">
+            {% for a in derniers %}
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src={{a.image.url}} alt="">
+                        </div>
+                        <div class="text-center py-2">
+                            <h5 class="mb-0">{{a.titre}}</h5>
+                            <small>{{a.contenu|safe|truncatewords:15}}</small><br>
+                            <a class="btn btn-prim py-2 px-3 mt-2" href="">Voir Plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<!-- Partenaire Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container py-5 mb-5">
+        <div class="bg-white">
+            <div class="owl-carousel vendor-carousel">
+                <img src={% static "appSalama/img/logo/congo equipment.png" %} alt="">
+                <img src={% static "appSalama/img/logo/congo equipment.png" %} alt="">
+                <img src={% static "appSalama/img/logo/mulykap.png" %} alt="">
+                <img src={% static "appSalama/img/logo/unh.jpeg" %} alt="">
+                <img src={% static "appSalama/img/logo/schneider.jpeg"%} alt="">
+                <img src={% static "appSalama/img/logo/schneider.jpeg"%} alt="">
+                <img src={% static "appSalama/img/logo.jpg" %} alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Partenaire End -->
+{% endblock body %}

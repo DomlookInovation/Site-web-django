@@ -1,0 +1,183 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}Infrastructure{% endblock title%}
+
+{% block body %}
+<!-- Header Start -->
+  <div class="container-fluid bg-primary py-5 mb-5 page-header">
+      <div class="container py-5">
+          <div class="row justify-content-center">
+              <div class="col-lg-10 text-center">
+                  <h1 class="display-3 text-white animated slideInDown">Nos Infrastructures</h1>
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb justify-content-center">
+                          <li class="breadcrumb-item"><a class="text-white" href={% url 'appSalama:home'%}>Accueil</a></li>
+                          <li class="breadcrumb-item text-white active" aria-current="page">Nos Infrastructures</li>
+                      </ol>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Header End -->
+
+
+  <!-- Contact Start -->
+  <div class="container-xxl py-5">
+      <div class="container">
+          <div class="row g-4">
+            <section id="main-container" class="main-container">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="shuffle-btn-group">
+                      <label class="active" for="all">
+                        <input type="radio" name="shuffle-filter" id="all" value="all" checked="checked">Voir tous
+                      </label>
+                      <label for="commercial">
+                        <input type="radio" name="shuffle-filter" id="commercial" value="commercial">Cycle Inferieur
+                      </label>
+                      <label for="education">
+                        <input type="radio" name="shuffle-filter" id="education" value="education">Electronique
+                      </label>
+                      <label for="government">
+                        <input type="radio" name="shuffle-filter" id="government" value="government">Electricite
+                      </label>
+                      <label for="infrastructure">
+                        <input type="radio" name="shuffle-filter" id="infrastructure" value="infrastructure">Mecanique Auto
+                      </label>
+                      <label for="residential">
+                        <input type="radio" name="shuffle-filter" id="residential" value="residential">Mecanique General
+                      </label>
+                      <label for="healthcare">
+                        <input type="radio" name="shuffle-filter" id="healthcare" value="healthcare">Imprimerie
+                      </label>
+                    </div><!-- project filter end -->
+            
+            
+                    <div class="row shuffle-wrapper">
+                      <div class="col-1 shuffle-sizer"></div>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;government&quot;,&quot;healthcare&quot;]">
+                          <div class="project-img-container">
+                            <a class="gallery-popup" href="img/MECANIQUE AUTO.jpg">
+                              <img class="img-fluid" src="img/MECANIQUE AUTO.jpg" alt="project-image">
+                              <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                <h3 class="project-item-title">
+                                  <a href="projects-single.html">Lorem ipsum dolor sit amet</a>
+                                </h3>
+                                <p class="project-cat">MECANIQUE AUTO</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- shuffle item 1 end -->
+              
+                        <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;healthcare&quot;]">
+                          <div class="project-img-container">
+                            <a class="gallery-popup" href="img/MECANIQUE GENERALE.jpg">
+                              <img class="img-fluid" src="img/MECANIQUE GENERALE.jpg" alt="project-image">
+                              <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                <h3 class="project-item-title">
+                                  <a href="projects-single.html">Lorem ipsum dolor sit amet</a>
+                                </h3>
+                                <p class="project-cat">MECANIQUE GENERALE</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- shuffle item 2 end -->
+              
+                        <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;commercial&quot;]">
+                          <div class="project-img-container">
+                            <a class="gallery-popup" href="img/ELECTRICITE.jpg">
+                              <img class="img-fluid" src="img/ELECTRICITE.jpg" alt="project-image">
+                              <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                <h3 class="project-item-title">
+                                  <a href="projects-single.html">Lorem ipsum dolor sit amet</a>
+                                </h3>
+                                <p class="project-cat">ELECTRICITE</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- shuffle item 3 end -->
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;education&quot;,&quot;infrastructure&quot;]">
+                          <div class="project-img-container">
+                            <a class="gallery-popup" href="img/ELECTRONIQUE.jpg">
+                              <img class="img-fluid" src="img/ELECTRONIQUE.jpg" alt="project-image">
+                              <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                <h3 class="project-item-title">
+                                  <a href="projects-single.html">Lorem ipsum dolor sit amet</a>
+                                </h3>
+                                <p class="project-cat">ELECTRONIQUE</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- shuffle item 4 end -->
+              
+                        <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;infrastructure&quot;,&quot;education&quot;]">
+                          <div class="project-img-container">
+                            <a class="gallery-popup" href="img/ELECTRICITE.jpg">
+                              <img class="img-fluid" src="img/ELECTRICITE.jpg" alt="project-image">
+                              <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                <h3 class="project-item-title">
+                                  <a href="projects-single.html">Lorem ipsum dolor sit amet</a>
+                                </h3>
+                                <p class="project-cat">ELECTRICITE</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- shuffle item 5 end -->
+              
+                        <div class="col-lg-4 col-md-6 shuffle-item" data-groups="[&quot;residential&quot;]">
+                          <div class="project-img-container">
+                            <a class="gallery-popup" href="img/ELECTRONIQUE.jpg">
+                              <img class="img-fluid" src="img/ELECTRONIQUE.jpg" alt="project-image">
+                              <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                            </a>
+                            <div class="project-item-info">
+                              <div class="project-item-info-content">
+                                <h3 class="project-item-title">
+                                  <a href="projects-single.html">Lorem ipsum dolor sit amet</a>
+                                </h3>
+                                <p class="project-cat">ELECTRONIQUE</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div><!-- shuffle item 6 end -->
+                      </div>
+                    </div><!-- shuffle end -->
+                  </div>
+                  <div class="col-12">
+                    <br>
+                    <div class="general-btn text-center">
+                      <a class="btn btn-prim" href="projects.html">Voir toutes les infrastructures</a>
+                    </div>
+                  </div>
+            
+                </div><!-- Content row end -->
+            
+              </div><!-- Conatiner end -->
+            </section><!-- Main container end -->
+            
+  
+          </div>
+      </div>
+  </div>
+  <!-- Contact End -->
+  {% endblock body %}
