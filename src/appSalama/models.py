@@ -162,6 +162,7 @@ class Inscription(models.Model):
     pourcentage = models.IntegerField(verbose_name="Pourcentage")
     adresse = models.CharField(max_length=255, verbose_name="Adresse")
     nom_responsable = models.CharField(max_length=255, verbose_name="Nom de responsable")
+    nom_etablissement = models.CharField(max_length=255, verbose_name="Nom de l'etablissement")
     religion = models.CharField(max_length=255, verbose_name="Religion")
     motif = models.TextField(verbose_name="Motif")
 
