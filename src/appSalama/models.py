@@ -86,6 +86,10 @@ class Article(models.Model):
         if not self.slug:
             self.slug = slugify(self.titre)
         super().save(*args, **kwargs)
+        
+    @property
+    def get_commentaires(self):
+        return len(Commentaire.objects.filter(article_id=self.pk))
 
 class Option(models.Model):
 
@@ -107,6 +111,10 @@ class Option(models.Model):
         if not self.slug:
             self.slug = slugify(self.nom)
         super().save(*args, **kwargs)
+        
+    @property
+    def get_cours(self):
+        return len(Cours.objects.filter(Option_id=self.pk))
 
 
 
