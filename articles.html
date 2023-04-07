@@ -1,0 +1,235 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title%}Article{% endblock title%}
+
+{% block body %}
+  <!-- Header Start -->
+  <div class="container-fluid bg-primary py-5 mb-5 page-header">
+      <div class="container py-5">
+          <div class="row justify-content-center">
+              <div class="col-lg-10 text-center">
+                  <h1 class="display-3 text-white animated slideInDown">Articles</h1>
+                  <nav aria-label="breadcrumb">
+                      <ol class="breadcrumb justify-content-center">
+                          <li class="breadcrumb-item"><a class="text-white" href={% url 'appSalama:home'%}>Accueil</a></li>
+                          <li class="breadcrumb-item text-white active" aria-current="page">Articles</li>
+                      </ol>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                
+              <section id="main-container" class="main-container">
+                  <div class="container">
+                    <div class="row">
+                
+                      <div class="col-lg-4 order-1 order-lg-0">
+                
+                        <div class="sidebar sidebar-left">
+                          <div class="widget recent-posts">
+                            <h3 class="widget-title">DERNIERS ARTICLES</h3>
+                            <ul class="list-unstyled">
+                              <li class="d-flex align-items-center">
+                                <div class="posts-thumb">
+                                  <a href="#"><img loading="lazy" alt="img" src="img/ELECTRICITE.jpg"></a>
+                                </div>
+                                <div class="post-info">
+                                  <h4 class="entry-title">
+                                    <a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</a>
+                                  </h4>
+                                </div>
+                              </li><!-- 1st post end-->
+                
+                              <li class="d-flex align-items-center">
+                                <div class="posts-thumb">
+                                  <a href="#"><img loading="lazy" alt="img" src={% static "appSalamaimg/ELECTRONIQUE.jpg" %}></a>
+                                </div>
+                                <div class="post-info">
+                                  <h4 class="entry-title">
+                                    <a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</a>
+                                  </h4>
+                                </div>
+                              </li><!-- 2nd post end-->
+                
+                              <li class="d-flex align-items-center">
+                                <div class="posts-thumb">
+                                  <a href="#"><img loading="lazy" alt="img" src="img/MECANIQUE AUTO.jpg"></a>
+                                </div>
+                                <div class="post-info">
+                                  <h4 class="entry-title">
+                                    <a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit,</a>
+                                  </h4>
+                                </div>
+                              </li><!-- 3rd post end-->
+                
+                            </ul>
+                
+                          </div><!-- Recent post end -->
+                
+                          <div class="widget">
+                            <h3 class="widget-title">CATÉGORIES</h3>
+                            <ul class="arrow nav nav-tabs">
+                              <li><a href="#">Construction</a></li>
+                              <li><a href="#">Commerciale</a></li>
+                              <li><a href="#">Innovation</a></li>
+                              <li><a href="#">Sécurité</a></li>
+                              <li><a href="#">Structure</a></li>
+                            </ul>
+                          </div><!-- Categories end -->
+                
+                          <div class="widget">
+                            <h3 class="widget-title">Archives </h3>
+                            <ul class="arrow nav nav-tabs">
+                              <li><a href="#">Février 2023</a></li>
+                              <li><a href="#">Janvier 2023</a></li>
+                              <li><a href="#">Decembre 2022</a></li>
+                              <li><a href="#">Novembre 2021</a></li>
+                              <li><a href="#">Octobre 2020</a></li>
+                            </ul>
+                          </div><!-- Archives end -->
+                
+                          
+                
+                        </div><!-- Sidebar end -->
+                      </div><!-- Sidebar Col end -->
+                
+                      <div class="col-lg-8 mb-5 mb-lg-0 order-0 order-lg-1">
+                        <div class="post">
+                          <div class="post-media post-image">
+                            <img loading="lazy" src={% static "appSalama/img/ELECTRONIQUE.jpg" %} class="img-fluid" alt="post-image">
+                          </div>
+                
+                          <div class="post-body">
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <span class="post-author">
+                                  <i class="far fa-user"></i><a href="#"> Admin</a>
+                                </span>
+                                <span class="post-cat">
+                                  <i class="far fa-folder-open"></i><a href="#"> News</a>
+                                </span>
+                                <span class="post-meta-date"><i class="far fa-calendar"></i> Juin 14, 2016</span>
+                                <span class="post-comment"><i class="far fa-comment"></i> 03<a href="#"
+                                    class="comments-link">Commentaires</a></span>
+                              </div>
+                              <h2 class="entry-title ">
+                                <a href="article.html" class="color-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                              </h2>
+                            </div><!-- header end -->
+                
+                            <div class="entry-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur ...</p>
+                            </div>
+                
+                            <div class="post-footer">
+                              <a href="article.html" class="btn btn-prim">Lire la suite</a>
+                            </div>
+                
+                          </div><!-- post-body end -->
+                        </div><!-- 1st post end -->
+              
+                        <div class="post">
+                          <div class="post-media post-image">
+                            <img loading="lazy" src={% static "appSalama/img/ELECTRONIQUE.jpg" %} class="img-fluid" alt="post-image">
+                          </div>
+                
+                          <div class="post-body">
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <span class="post-author">
+                                  <i class="far fa-user"></i><a href="#"> Admin</a>
+                                </span>
+                                <span class="post-cat">
+                                  <i class="far fa-folder-open"></i><a href="#"> News</a>
+                                </span>
+                                <span class="post-meta-date"><i class="far fa-calendar"></i> Juillet 14, 2016</span>
+                                <span class="post-comment"><i class="far fa-comment"></i> 03<a href="#"
+                                    class="comments-link">Comments</a></span>
+                              </div>
+                              <h2 class="entry-title">
+                                <a href="article.html" class="color-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                              </h2>
+                            </div><!-- header end -->
+                
+                            <div class="entry-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur ...</p>
+                            </div>
+                
+                            <div class="post-footer">
+                              <a href="article.html" class="btn btn-prim">Lire la suite</a>
+                            </div>
+                
+                          </div><!-- post-body end -->
+                        </div><!-- 3rd post end -->
+                        <div class="post">
+                          <div class="post-media post-image">
+                            <img loading="lazy" src="img/MECANIQUE AUTO.jpg" class="img-fluid" alt="post-image">
+                          </div>
+                
+                          <div class="post-body">
+                            <div class="entry-header">
+                              <div class="post-meta">
+                                <span class="post-author">
+                                  <i class="far fa-user"></i><a href="#"> Admin</a>
+                                </span>
+                                <span class="post-cat">
+                                  <i class="far fa-folder-open"></i><a href="#"> News</a>
+                                </span>
+                                <span class="post-meta-date"><i class="far fa-calendar"></i> Octobre 14, 2016</span>
+                                <span class="post-comment"><i class="far fa-comment"></i> 03<a href="#"
+                                    class="comments-link">Commentaires</a></span>
+                              </div>
+                              <h2 class="entry-title">
+                                <a href="article.html" class="color-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                              </h2>
+                            </div><!-- header end -->
+                
+                            <div class="entry-content">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur. Excepteur ...</p>
+                            </div>
+                
+                            <div class="post-footer">
+                              <a href="article.html" class="btn btn-prim">Lire la suite</a>
+                            </div>
+                
+                          </div><!-- post-body end -->
+                        </div><!-- 1st post end -->
+                
+                        <nav class="paging" aria-label="Page navigation example">
+                          <ul class="pagination">
+                            <li class="page-item"><a class="page-link color-text" href="#"><i class="fas fa-angle-double-left"></i></a></li>
+                            <li class="page-item"><a class="page-link color-text" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link color-text" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link color-text" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link color-text" href="#"><i class="fas fa-angle-double-right"></i></a></li>
+                          </ul>
+                        </nav>
+                
+                      </div><!-- Content Col end -->
+                
+                    </div><!-- Main row end -->
+                
+                  </div><!-- Container end -->
+              </section><!-- Main container end -->
+    
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+{% endblock body %}
